@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairyTale - Приключения</title>
+    <link rel="stylesheet" href="ex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo">FairyTale</div>
+            <nav>
+                <a href="#" class="current-page">Уроки</a>
+                <a href="../notes/notes.html">Заметки</a>
+            </nav>
+            <div class="login"><a href="../cabinet/cabinet.html">Кабинет</a></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="adventure">
+            <h1>Добро пожаловать в раздел приключений!</h1>
+            <p>Персонажи уже ждут своего героя</p>
+
+            <div class="adventure-path">
+                <svg class="adventure-line" width="100%" height="100%" viewBox="0 0 1250 1600" preserveAspectRatio="xMinYMin meet">
+                    <path d="M 420 313 S 1801 332 1038 545 S 131 975 650 976 S 1591 1131 1349 1313 C 950 1650 -707 1586 1621 2155" stroke="#467470" stroke-width="15" fill="transparent"/>
+                </svg>
+
+                <div class="node start-node">
+                    <img src="../images/listing/listen/clew.png" alt="Начало" width="400">
+                </div>
+
+                <div class="node level-1" data-level="1">
+                    <div class="course-card blue">
+                        <img src="../images/listing/listen/plotok.png" alt="Узор для платочка" width="260">
+                        <div class="course-card-info-blue">
+                            <h3>Узор для платочка</h3>
+                            <h4>Урок 1</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="node level-2" data-level="2">
+                    <div class="course-card yellow">
+                        <img src="../images/listing/listen/Ivan1.png" alt="Поиск цифр" width="260">
+                        <div class="course-card-info-yellow">
+                            <h3>Поиск цифр</h3>
+                            <h4>Урок 2</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="node level-3" data-level="3">
+                    <div class="course-card red">
+                        <img src="../images/listing/listen/bear1.png" alt="Мир животных" width="260">
+                        <div class="course-card-info-red">
+                            <h3>Мир животных</h3>
+                            <h4>Урок 3</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="node end-node"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно Уровня 1 -->
+    <div id="level1Modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div id="levelIntro1" class="level-step active">
+                <h2>Помоги Василисе собрать платочек</h2>
+                <div class="blurred-circle-container">
+                    <div class="blurred-circle color-1"></div>
+                    <img class="example-image" src="../images/listing/listen/ex1.png" alt="Пример" width="300">
+                </div>
+                <button class="next-btn" data-next="levelVideo1">Начать</button>
+            </div>
+
+            <div id="levelVideo1" class="level-step">
+                <h2>Обучающее видео</h2>
+                <video width="100%" controls class="modal-video">
+                    <source src="../videos/shapes.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <button class="next-btn" data-next="levelGame1">Далее</button>
+            </div>
+
+            <div id="levelGame1" class="level-step">
+                <h2>Помоги Василисе</h2>
+                <p>Перетаскивай фигуры на их место</p>
+                <div class="drop-targets">
+                    <div class="drop-target" data-shape="triangle"></div>
+                    <div class="drop-target" data-shape="square"></div>
+                    <div class="drop-target" data-shape="rectangle"></div>
+                    <div class="drop-target" data-shape="circle"></div>
+                </div>
+                <div class="drag-items">
+                    <div class="drag-item" data-shape="triangle" draggable="true"></div>
+                    <div class="drag-item" data-shape="square" draggable="true"></div>
+                    <div class="drag-item" data-shape="rectangle" draggable="true"></div>
+                    <div class="drag-item" data-shape="circle" draggable="true"></div>
+                </div>
+                <button class="complete-level" data-next="levelGame1-1">Продолжить</button>
+            </div>
+
+            <div id="levelGame1-1" class="level-step">
+                <h2>Найди пару</h2>
+                <p>Соедини одинаковые фигуры</p>
+                <div class="pair-game-container">
+                    <div class="left-column pair-column"></div>
+                    <div class="right-column pair-column"></div>
+                </div>
+                <button class="complete-level" data-next="levelGame1-2">Далее</button>
+            </div>
+
+            <div id="levelGame1-2" class="level-step">
+                <h2>Что лишнее?</h2>
+                <p>Найди фигуру, которая отличается от других</p>
+                <div class="odd-row">
+                    <div class="shape-odd circle"></div>
+                    <div class="shape-odd circle"></div>
+                    <div class="shape-odd circle"></div>
+                    <div class="shape-odd circle"></div>
+                </div>
+                <div class="odd-row">
+                    <div class="shape-odd square"></div>
+                    <div class="shape-odd square"></div>
+                    <div class="shape-odd square"></div>
+                    <div class="shape-odd square"></div>
+                </div>
+                <div class="odd-row">
+                    <div class="shape-odd triangle"></div>
+                    <div class="shape-odd triangle"></div>
+                    <div class="shape-odd triangle"></div>
+                    <div class="shape-odd triangle"></div>
+                </div>
+                <button class="complete-level" data-next="levelGame1-3">Далее</button>
+            </div>
+
+            <div id="levelGame1-3" class="level-step">
+                <h2>Расставь по размеру</h2>
+                <p>Перетащи фигуры от самой маленькой к самой большой</p>
+                <div class="size-game-container">
+                    <div class="size-targets">
+                        <div class="size-target" data-size="1"></div>
+                        <div class="size-target" data-size="2"></div>
+                        <div class="size-target" data-size="3"></div>
+                    </div>
+                    <div class="size-items">
+                        <div class="size-item" data-size="1" draggable="true"></div>
+                        <div class="size-item" data-size="2" draggable="true"></div>
+                        <div class="size-item" data-size="3" draggable="true"></div>
+                    </div>
+                </div>
+                <button class="complete-level" data-next="levelComplete1">Завершить</button>
+            </div>
+
+            <div id="levelComplete1" class="level-step">
+                <div class="blurred-circle-container">
+                    <div class="blurred-circle color-2"></div>
+                    <img class="example-image" src="../images/listing/listen/Vasilis.png" alt="Василиса" width="300">
+                </div>
+                <h2>Молодец!</h2>
+                <p>Ты успешно прошел уровень!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно Уровня 2 -->
+    <div id="level2Modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div id="levelIntro2" class="level-step active">
+                <h2>Поиск цифр</h2>
+                <div class="blurred-circle-container">
+                    <div class="blurred-circle color-1"></div>
+                    <img class="example-image" src="../images/listing/listen/Ivan1.png" alt="Иван" width="300">
+                </div>
+                <button class="next-btn" data-next="levelVideo2">Начать</button>
+            </div>
+
+            <div id="levelVideo2" class="level-step">
+                <h2>Обучающее видео</h2>
+                <video width="100%" controls class="modal-video">
+                    <source src="../videos/numbers.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <button class="next-btn" data-next="levelGame2A">Далее</button>
+            </div>
+
+            <div id="levelGame2A" class="level-step">
+                <h2>Цифры от 1 до 9</h2>
+                <p>Нажми на цифры в правильном порядке</p>
+                <div id="number-grid-game" class="number-grid-game"></div>
+                <button class="next-btn" data-next="levelGame2-2">Далее</button>
+            </div>
+
+            <div id="levelGame2-2" class="level-step">
+                <h2>Найди такую же</h2>
+                <p>Выбери цифру, которая совпадает с показанной</p>
+                <div class="find-same-container">
+                    <div class="target-number"></div>
+                    <div class="number-options"></div>
+                </div>
+                <button class="next-btn" data-next="levelGame2-7">Далее</button>
+            </div>
+
+            <div id="levelGame2-7" class="level-step">
+                <h2>Пропущенное число</h2>
+                <p>Выбери число, которое пропущено в последовательности</p>
+                <div class="sequences-container">
+                    <div class="sequence">
+                        <div class="number-sequence">1, 2, _, 4</div>
+                        <div class="number-options">
+                            <div class="number-option">1</div>
+                            <div class="number-option">2</div>
+                            <div class="number-option">3</div>
+                            <div class="number-option">4</div>
+                        </div>
+                    </div>
+                    <div class="sequence">
+                        <div class="number-sequence">5, _, 7, 8</div>
+                        <div class="number-options">
+                            <div class="number-option">5</div>
+                            <div class="number-option">6</div>
+                            <div class="number-option">7</div>
+                            <div class="number-option">8</div>
+                        </div>
+                    </div>
+                    <div class="sequence">
+                        <div class="number-sequence">9, 10, 11, _</div>
+                        <div class="number-options">
+                            <div class="number-option">10</div>
+                            <div class="number-option">11</div>
+                            <div class="number-option">12</div>
+                            <div class="number-option">13</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="next-btn" data-next="levelVideo3">Далее</button>
+            </div>
+
+            <div id="levelVideo3" class="level-step">
+                <h2>Обучающее видео</h2>
+                <video width="100%" controls class="modal-video">
+                    <source src="../videos/math.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <button class="next-btn" data-next="levelGame2-9">Далее</button>
+            </div>
+
+            <div id="levelGame2-9" class="level-step">
+                <h2>Сложи и выбери ответ</h2>
+                <p>Реши пример и выбери правильный ответ</p>
+                <div class="problems-container">
+                    <div class="math-problem-container">
+                        <div class="math-problem">2 + 3 = _</div>
+                        <div class="number-options">
+                            <div class="number-option">3</div>
+                            <div class="number-option">5</div>
+                            <div class="number-option">6</div>
+                            <div class="number-option">7</div>
+                        </div>
+                    </div>
+                    <div class="math-problem-container">
+                        <div class="math-problem">7 - 2 = _</div>
+                        <div class="number-options">
+                            <div class="number-option">3</div>
+                            <div class="number-option">5</div>
+                            <div class="number-option">6</div>
+                            <div class="number-option">7</div>
+                        </div>
+                    </div>
+                    <div class="math-problem-container">
+                        <div class="math-problem">4 + 5 = _</div>
+                        <div class="number-options">
+                            <div class="number-option">7</div>
+                            <div class="number-option">8</div>
+                            <div class="number-option">9</div>
+                            <div class="number-option">10</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="next-btn" data-next="levelGame2B">Далее</button>
+            </div>
+
+            <div id="levelGame2B" class="level-step">
+                <h2>Сопоставь количество</h2>
+                <p>Перетащи правильные цифры к картинкам</p>
+                
+                <div class="item-containers">
+                    <div class="item-container" data-number="7">
+                        <div class="item-images">
+                            <img src="../images/listing/listen/pizza.png" alt="Пицца" width="40" height="40">
+                            <img src="../images/listing/listen/pizza.png" alt="Пицца" width="40" height="40">
+                            <img src="../images/listing/listen/pizza.png" alt="Пицца" width="40" height="40">
+                            <img src="../images/listing/listen/pizza.png" alt="Пицца" width="40" height="40">
+                            <img src="../images/listing/listen/pizza.png" alt="Пицца" width="40" height="40">
+                            <img src="../images/listing/listen/pizza.png" alt="Пицца" width="40" height="40">
+                            <img src="../images/listing/listen/pizza.png" alt="Пицца" width="40" height="40">
+                        </div>
+                        <div class="drop-area"></div>
+                    </div>
+                    
+                    <div class="item-container" data-number="6">
+                        <div class="item-images">
+                            <img src="../images/listing/listen/sun.png" alt="Солнце" width="40" height="40">
+                            <img src="../images/listing/listen/sun.png" alt="Солнце" width="40" height="40">
+                            <img src="../images/listing/listen/sun.png" alt="Солнце" width="40" height="40">
+                            <img src="../images/listing/listen/sun.png" alt="Солнце" width="40" height="40">
+                            <img src="../images/listing/listen/sun.png" alt="Солнце" width="40" height="40">
+                            <img src="../images/listing/listen/sun.png" alt="Солнце" width="40" height="40">
+                        </div>
+                        <div class="drop-area"></div>
+                    </div>
+                    
+                    <div class="item-container" data-number="8">
+                        <div class="item-images">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                            <img src="../images/listing/listen/book2.png" alt="Книга" width="40" height="40">
+                        </div>
+                        <div class="drop-area"></div>
+                    </div>
+                </div>
+                
+                <div id="number-drag-container" class="number-drag-container">
+                    <div class="number-drag" data-number="6">6</div>
+                    <div class="number-drag" data-number="7">7</div>
+                    <div class="number-drag" data-number="8">8</div>
+                    <div class="number-drag" data-number="4">4</div>
+                    <div class="number-drag" data-number="5">5</div>
+                    <div class="number-drag" data-number="9">9</div>
+                </div>
+                
+                <button class="complete-level" data-next="levelComplete2">Завершить</button>
+            </div>
+
+            <div id="levelComplete2" class="level-step">
+                <h2>Молодец!!</h2>
+                <p>Ты нашел все цифры!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно Уровня 3 -->
+    <div id="level3Modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div id="levelIntro3" class="level-step active">
+                <h2>Мир животных с Михайло Потапычем</h2>
+                <div class="blurred-circle-container">
+                    <div class="blurred-circle color-1"></div>
+                    <img class="example-image" src="../images/listing/listen/bear1.png" alt="Медведь" width="300">
+                </div>
+                <p>Привет, дружок! Я - Михайло Потапыч, хозяин леса. Давай вместе изучать мир животных!</p>
+                <button class="next-btn" data-next="levelVideo3">Начать</button>
+            </div>
+
+            <div id="levelVideo3" class="level-step">
+                <h2>Обучающее видео</h2>
+                <video width="100%" controls class="modal-video">
+                    <source src="../videos/animals.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <button class="next-btn" data-next="levelGame3-1">Далее</button>
+            </div>
+
+            <div id="levelGame3-1" class="level-step">
+                <h2>Кто где живет?</h2>
+                <p>Перетащи животных в их родной дом</p>
+                <div class="habitats-container">
+                    <div class="habitat" data-habitat="forest">
+                        <h3>Лес</h3>
+                        <div class="habitat-area"></div>
+                    </div>
+                    <div class="habitat" data-habitat="sea">
+                        <h3>Море</h3>
+                        <div class="habitat-area"></div>
+                    </div>
+                    <div class="habitat" data-habitat="farm">
+                        <h3>Ферма</h3>
+                        <div class="habitat-area"></div>
+                    </div>
+                </div>
+                <div class="animals-container">
+                    <div class="animal" data-animal="fox" data-habitat="forest">
+                        <img src="../images/listing/listen/fox.png" alt="Лиса" width="80" height="80">
+                    </div>
+                    <div class="animal" data-animal="bear" data-habitat="forest">
+                        <img src="../images/listing/listen/bear.png" alt="Медведь" width="80" height="80">
+                    </div>
+                    <div class="animal" data-animal="fish" data-habitat="sea">
+                        <img src="../images/listing/listen/fish.png" alt="Рыба" width="80" height="80">
+                    </div>
+                    <div class="animal" data-animal="cow" data-habitat="farm">
+                        <img src="../images/listing/listen/cow.png" alt="Корова" width="80" height="80">
+                    </div>
+                </div>
+                <button class="complete-level" data-next="levelGame3-2">Продолжить</button>
+            </div>
+
+            <div id="levelGame3-2" class="level-step">
+                <h2>Времена года</h2>
+                <p>Разложи картинки по временам года</p>
+                <div class="seasons-container">
+                    <div class="season" data-season="winter">
+                        <h3>Зима</h3>
+                        <div class="season-area"></div>
+                    </div>
+                    <div class="season" data-season="spring">
+                        <h3>Весна</h3>
+                        <div class="season-area"></div>
+                    </div>
+                    <div class="season" data-season="summer">
+                        <h3>Лето</h3>
+                        <div class="season-area"></div>
+                    </div>
+                    <div class="season" data-season="autumn">
+                        <h3>Осень</h3>
+                        <div class="season-area"></div>
+                    </div>
+                </div>
+                <div class="season-items">
+                    <div class="season-item" data-item="snowflake" data-season="winter">
+                        <img src="../images/listing/listen/snow.png" alt="Снежинка" width="80" height="80">
+                    </div>
+                    <div class="season-item" data-item="flower" data-season="spring">
+                        <img src="../images/listing/listen/flow.png" alt="Цветок" width="80" height="80">
+                    </div>
+                    <div class="season-item" data-item="sun" data-season="summer">
+                        <img src="../images/listing/listen/sun.png" alt="Солнце" width="80" height="80">
+                    </div>
+                    <div class="season-item" data-item="leaf" data-season="autumn">
+                        <img src="../images/listing/listen/list.png" alt="Лист" width="80" height="80">
+                    </div>
+                </div>
+                <button class="complete-level" data-next="levelGame3-3">Далее</button>
+            </div>
+
+            <div id="levelGame3-3" class="level-step">
+                <h2>Найди маму и детёныша</h2>
+                <p>Соедини животных с их детёнышами</p>
+                <div class="parents-container"></div>
+                <div class="babies-container"></div>
+                <button class="complete-level" data-next="levelGame3-4">Далее</button>
+            </div>
+
+            <div id="levelGame3-4" class="level-step">
+                <h2>Животные и их дары</h2>
+                <p>Сопоставь животное с тем, что оно дает</p>
+                <div class="animals-products-container">
+                    <div class="animal-product" data-product="milk">
+                        <img src="../images/listing/listen/cow.png" alt="Корова" width="100" height="100">
+                    </div>
+                    <div class="animal-product" data-product="eggs">
+                        <img src="../images/listing/listen/chicken.png" alt="Курица" width="100" height="100">
+                    </div>
+                    <div class="animal-product" data-product="honey">
+                        <img src="../images/listing/listen/bee.png" alt="Пчела" width="100" height="100">
+                    </div>
+                </div>
+                <div class="products-container">
+                    <div class="product" data-product="milk" data-animal="cow">
+                        <img src="../images/listing/listen/milk.png" alt="Молоко" width="80" height="80">
+                    </div>
+                    <div class="product" data-product="eggs" data-animal="chicken">
+                        <img src="../images/listing/listen/eggs.png" alt="Яйца" width="80" height="80">
+                    </div>
+                    <div class="product" data-product="honey" data-animal="bee">
+                        <img src="../images/listing/listen/honey.png" alt="Мёд" width="80" height="80">
+                    </div>
+                </div>
+                <button class="complete-level" data-next="levelGame3-5">Далее</button>
+            </div>
+
+            <div id="levelGame3-5" class="level-step">
+                <h2>Жизненный цикл</h2>
+                <p>Расставь этапы жизни бабочки по порядку</p>
+                <div class="lifecycle-targets">
+                    <div class="lifecycle-target" data-stage="1"></div>
+                    <div class="lifecycle-target" data-stage="2"></div>
+                    <div class="lifecycle-target" data-stage="3"></div>
+                    <div class="lifecycle-target" data-stage="4"></div>
+                </div>
+                <div class="lifecycle-items">
+                    <div class="lifecycle-item" data-stage="1" data-type="egg">
+                        <img src="../images/listing/listen/egg.png" alt="Яйцо" width="100" height="100">
+                    </div>
+                    <div class="lifecycle-item" data-stage="2" data-type="caterpillar">
+                        <img src="../images/listing/listen/caterpillar.png" alt="Гусеница" width="100" height="100">
+                    </div>
+                    <div class="lifecycle-item" data-stage="3" data-type="pupa">
+                        <img src="../images/listing/listen/pupa.png" alt="Куколка" width="100" height="100">
+                    </div>
+                    <div class="lifecycle-item" data-stage="4" data-type="butterfly">
+                        <img src="../images/listing/listen/butterfly.png" alt="Бабочка" width="100" height="100">
+                    </div>
+                </div>
+                <button class="complete-level" data-next="levelComplete3">Завершить</button>
+            </div>
+
+            <div id="levelComplete3" class="level-step">
+                <div class="blurred-circle-container">
+                    <div class="blurred-circle color-2"></div>
+                    <img class="example-image" src="../images/listing/listen/bear_happy.png" alt="Довольный медведь" width="300">
+                </div>
+                <h2>Молодец!</h2>
+                <p>Ты отлично справился с заданиями! Приходи ещё - покажу тебе другие чудеса леса!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+
+    <script>
+        // Конфигурация Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD97XC87A5ceWQqD1h9hHhVFCH9xW0fhBk",
+            authDomain: "rina-afb33.firebaseapp.com",
+            databaseURL: "https://rina-afb33-default-rtdb.firebaseio.com",
+            projectId: "rina-afb33",
+            storageBucket: "rina-afb33.firebasestorage.app",
+            messagingSenderId: "80189541038",
+            appId: "1:80189541038:web:fea16be10ce25b9073bb3f",
+            measurementId: "G-R25C670FPV"
+        };
+
+        // Инициализация Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const auth = firebase.auth();
+    </script>
+
+    <script src="ex.js"></script>
+</body>
+</html>

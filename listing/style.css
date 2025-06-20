@@ -1,0 +1,486 @@
+/* Global styles */
+body {
+    font-family: 'Unbounded', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.header-wrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 23px; /* Увеличиваем базовый размер шрифта */
+    color: black;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+}
+
+header nav a {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out; /* Анимация */
+}
+
+header nav a:hover {
+    transform: scale(1.1); /* Увеличение размера при наведении */
+}
+
+header .logo {
+    font-size: 35px; /* Увеличиваем размер шрифта лого */
+    font-family: 'Unbounded', sans-serif;
+    font-weight: normal;
+}
+
+/* Login link animation */
+header .login a {
+    display: inline-block; /* Это может быть необходимо для некоторых браузеров */
+    transition: transform 0.2s ease-in-out;
+    font-size: 30px; /* Увеличиваем размер шрифта Log in */
+}
+
+header .login a:hover {
+    transform: scale(1.1);
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Hero section */
+.hero {
+    padding: 50px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 70px;
+    margin-bottom: 120px;
+    font-weight: normal; /* Убираем жирный шрифт */
+  }
+/* Feature boxes */
+.features {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+}
+
+.feature-box {
+    width: 350px;
+    height: 150px;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    border: none;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.feature-box:hover {
+    transform: scale(1.2);
+}
+
+.peach {
+    background-color: rgba(255, 198, 162, 0.5); /* Сказочные истории - прозрачный */
+    color: black;
+    font-weight: normal; /* Убираем жирный шрифт */
+}
+
+.yellow {
+    background-color: rgba(255, 225, 161, 0.5); /* Занимательные задания - прозрачный */
+    color: black;
+    font-weight: normal; /* Убираем жирный шрифт */
+}
+
+.purple {
+    background-color: rgba(234, 191, 255, 0.5); /* Интересные факты - прозрачный */
+    color: black;
+    font-weight: normal; /* Убираем жирный шрифт */
+}
+
+/* Lesson buttons */
+.lessons {
+    margin-bottom: 30px;
+    position: relative;  /* Важно: делаем секцию .lessons относительной, чтобы позиционировать .back-bloor */
+    overflow: hidden; /* Скрываем, что выходит за пределы секции */
+}
+
+.back-bloor{
+    position: absolute; /* Позиционируем относительно .lessons */
+    z-index: 1; /* Размещаем на заднем плане */
+    width: 1100px; /* Задайте желаемую ширину */
+    height: 800px; /* Задайте желаемую высоту (равную ширине для круга) */
+    background-color: #add8e6; /* Светло-голубой цвет */
+    border-radius: 50%; /* Делает элемент кругом */
+    filter: blur(150px); /* Добавляет размытие (регулируйте значение) */
+    opacity: 0.7; /* Необязательно: для полупрозрачности */
+    top: 50px; /* Отступ сверху, регулируйте для позиционирования */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, 00%); /* Центрируем круг */
+}
+
+.lessons h2 {
+    font-size: 45px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    position: relative; /* Добавляем для z-index */
+    z-index: 2;          /* Размещаем над кругом и кнопками */
+}
+
+.lesson-button {
+    position: relative;
+    z-index: 2;
+    width: 1000px;
+    height: 100px;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 40px;
+    font-weight: normal;
+    color: black;
+    cursor: pointer;
+    background-color: transparent; /* Убираем background-color у кнопки */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto;
+    gap: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    overflow: hidden; /* Чтобы border-radius работал корректно с псевдоэлементом */
+}
+
+.lesson-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Задаем белый фон */
+    opacity: 0.8; /* Применяем прозрачность */
+    z-index: -1; /* Помещаем фон под контент кнопки */
+    border-radius: inherit; /* Наследуем border-radius от кнопки */
+}
+
+.lesson-button img {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    z-index: 1; /* поверх фона*/
+}
+
+.lesson-button:hover::before {
+    background-color: #e0f0ff; /* цвет фона при наведении */
+    transition: background-color 0.3s ease;
+}
+
+/* Course cards */
+.courses {
+    margin-bottom: 30px;
+}
+
+.courses h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.course-container {
+    display: flex;
+    justify-content: center;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в колонну */
+    align-items: center;      /* Центрируем по горизонтали */
+    width: 300px;           /* Задайте желаемую ширину карточки */
+    border-radius: 10px;
+    overflow: hidden; /* Скрываем контент, выходящий за границы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Небольшая тень */
+    margin: 0 0 0 120px;
+}
+
+.course-card img {
+    width: 100%;            /* Занимает всю ширину карточки */
+    height: auto;           /* Сохраняет пропорции */
+    display: block;  /* Избавит от возможного отступа снизу */
+    object-fit: cover;      /* Масштабирует картинку, чтобы заполнить область */
+}
+
+.course-card.violet {
+    background: linear-gradient(to bottom, #dda0dd, #a789e7);
+}
+
+.course-card-info-violet {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f5c4f5; /* Светло-фиолетовый фон */
+    color: black;
+    text-align: center;
+    font-weight: normal;
+}
+
+.course-card-info-blue {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #add8e6; /* Светло-фиолетовый фон */
+    color: black;
+    text-align: center;
+    font-weight: normal;
+}
+
+.course-card-info-green {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #90ee90; /* Светло-фиолетовый фон */
+    color: black;
+    text-align: center;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: normal;
+    display: block;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: normal;
+    display: block;
+}
+
+h5 {
+    font-size: 22px;
+    font-weight: normal;
+    display: block;
+}
+
+.blue {
+    background: linear-gradient(to bottom, #add8e6, #78a4c9);
+}
+
+.green {
+    background: linear-gradient(to bottom, #90ee90, #61af80);
+}
+
+/* Responsive design (optional) */
+@media (max-width: 600px) {
+    .header-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    .course-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-card {
+        margin: 10px 0;
+        width: 80%;
+    }
+}
+
+/* Registration form */
+.registration {
+    margin-bottom: 30px;
+}
+
+.registration h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.registration h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.name-id-row {
+    display: flex; /* Делаем контейнер flex-контейнером */
+    width: 100%; /* Занимает всю ширину формы */
+    gap: 20px; /* Добавляем отступ между полями */
+    margin-bottom: 20px;
+}
+
+.name-id-row input:first-child {
+    width: 70%; /* "Ваше имя" occupies 70% */
+}
+
+.name-id-row input:last-child {
+    width: 30%; /* "#ID" occupies 30% */
+}
+
+
+.registration-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 25px;
+    box-sizing: border-box; /* Важно, чтобы padding не увеличивал ширину */
+    font-family: 'Unbounded', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+/* Убираем margin-bottom у полей в ряду, т.к. уже задан отступ на уровне ряда */
+.name-id-row input {
+    margin-bottom: 0;
+}
+
+.registration-form button {
+    width: 60%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+    background-color: #ADEEFF;
+    transition: background-color 0.3s ease;
+    font-family: 'Unbounded', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+.registration-form button:hover {
+    background-color: rgb(145, 219, 243);
+}
+
+.registration img {
+    width: 500px;
+    height: 500px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: black;
+    border-top: 1px solid #eee;
+}
+
+.registration-form .id-unavailable {
+    border-color: red; /* Выделяем поле ID красным цветом при ошибке */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Добавляем красное свечение */
+  }
+  
+  .registration-form .error-message {
+    color: red;
+    margin-top: -10px; /* Поднимаем сообщение об ошибке ближе к полю */
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  /* Родительская форма регистрации */
+.registration-form .form-row {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 25px;
+    box-sizing: border-box;
+    font-family: 'Unbounded', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+    background-color: #ADEEFF;
+    transition: background-color 0.3s ease;
+    font-family: 'Unbounded', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form button:hover {
+    background-color: rgb(145, 219, 243);
+}
+
+/* Индикатор загрузки */
+.registration-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100%;
+}

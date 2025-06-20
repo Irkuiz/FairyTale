@@ -1,0 +1,159 @@
+body {
+    font-family: 'Unbounded', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    text-align: center;
+}
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+/* Common styles for both forms */
+.form-section {
+    margin-bottom: 30px;
+    width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    font-size: 64px;
+    margin-bottom: 60px;
+    font-weight: normal;
+}
+
+.login-form,
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 40px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    background-color: #F4F4F4;
+    font-size: 36px;
+    box-sizing: border-box;
+    font-family: 'Unbounded', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-section input:focus {
+    outline: none;
+    border-color: #00DCFF;
+    box-shadow: 0 0 10px rgba(0, 220, 255, 0.3);
+}
+
+.form-section button {
+    width: 60%;
+    padding: 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Unbounded', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.form-section button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.toggle-link {
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+.toggle-link a {
+    color: #888888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toggle-link a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+/* Login specific styles */
+.login-title {
+    color: #00DCFF;
+}
+
+.login-form button {
+    background: linear-gradient(to right, #00DCFF, #0099FF);
+}
+
+/* Registration specific styles */
+.register-title {
+    color: #BB56FF;
+}
+
+.registration-form button {
+    background: linear-gradient(to right, #BB56FF, #7D2AE8);
+}
+
+/* Добавьте в конец файла */
+.error-message {
+    color: #FF6B6B;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-error {
+    border-color: #FF6B6B !important;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .form-section {
+        width: 90%;
+        padding: 30px;
+    }
+    
+    .form-section h2 {
+        font-size: 48px;
+        margin-bottom: 40px;
+    }
+    
+    .form-section input {
+        font-size: 28px;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .form-section button {
+        font-size: 28px;
+        padding: 20px;
+    }
+    
+    .toggle-link {
+        font-size: 22px;
+    }
+}

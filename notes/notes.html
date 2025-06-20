@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметки - FairyTale</title>
+    <link rel="stylesheet" href="notes.css">
+    <!-- Google Fonts: Unbounded -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="header-wrapper">
+                <div class="logo">FairyTale</div>
+                <nav>
+                    <a href="../ex/ex.html">Уроки</a>
+                    <a href="#" class="current-page">Заметки</a>
+                </nav>
+                <div class="login"><a href="../cabinet/cabinet.html">Кабинет</a></div>
+            </div>
+        </header>
+
+        <div class="hero">
+            <div class="back-bloor"></div>
+            <h1>Добро пожаловать в раздел заметки!</h1>
+            <p>Здесь собранные краткие термины со всех уроков</p>
+        </div>
+
+        <div class="notes-grid">
+            <div class="note-card" id="figures-card">
+                <h3>Фигуры</h3>
+                <img src="..\images\listing\listen\figuri.png" alt="Фигуры">
+            </div>
+            <div class="note-card placeholder-card cyan" id="numbers-card">
+                <h3>Цифры</h3>
+                <img src="..\images\listing\listen\numbers.png" alt="Цифры">
+            </div>
+            <div class="note-card placeholder-card blue" id="seasons-card">
+                <h3>Времена года</h3>
+                <img src="..\images\listing\listen\seasons.png" alt="Времена года">
+            </div>
+            <div class="note-card placeholder-card" id="animals-card">
+                <h3>Животные</h3>
+                <img src="..\images\listing\listen\animals.png" alt="Животные">
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2025 FairyTale. Все права защищены.
+        </footer>
+
+    </div>
+
+    <!-- Modal Windows -->
+    <div id="figures-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Фигуры</h2>
+            <p>Что такое фигура?</p>
+            <div class="opredelenie">
+                <div class="back-rectangle">
+                    <p><strong>Фигура</strong> — это форма предмета. Как будто мы обвели его карандашом!</p>
+                </div>
+            </div>
+            <p>Какие бывают фигуры?</p>
+    
+            <div class="examples-section">
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-1"></div>
+                        <img class="example-image" src="..\images\listing\listen\sun.png" alt="Example Image">
+                        <div class="text-block"><strong>Круг</strong></div>
+                        <div class="text-block">Как солнышко, мячик или тарелка!</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-2"></div>
+                        <img class="example-image" src="..\images\listing\listen\cub1.png" alt="Example Image">
+                        <div class="text-block"><strong>Квадрат</strong></div>
+                        <div class="text-block">Как окошко, кубик или платочек!</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-3"></div>
+                        <img class="example-image" src="..\images\listing\listen\door.png" alt="Example Image">
+                        <div class="text-block"><strong>Прямоугольник</strong></div>
+                        <div class="text-block">Как дверь, книга или экран телевизора!</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-4"></div>
+                        <img class="example-image" src="..\images\listing\listen\pizza.png" alt="Example Image">
+                        <div class="text-block"><strong>Треугольник</strong></div>
+                        <div class="text-block">Как крыша домика, кусочек пиццы или дорожный знак!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="numbers-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Цифры</h2>
+            <p>Что такое цифры?</p>
+            <div class="opredelenie">
+                <div class="back-rectangle">
+                    <p><strong>Цифры</strong> — это символы, которые мы используем для обозначения чисел. Они помогают нам считать!</p>
+                </div>
+            </div>
+            <p>Основные цифры:</p>
+    
+            <div class="examples-section">
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-1"></div>
+                        <img class="example-image" src="..\images\listing\listen\car.png" alt="Цифра 1">
+                        <div class="text-block"><strong>1 - один</strong></div>
+                        <div class="text-block">Одна машина</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-2"></div>
+                        <img class="example-image" src="..\images\listing\listen\noski.png" alt="Цифра 2">
+                        <div class="text-block"><strong>2 - два</strong></div>
+                        <div class="text-block">Два носка</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-3"></div>
+                        <img class="example-image" src="..\images\listing\listen\flowers.png" alt="Цифра 3">
+                        <div class="text-block"><strong>3 - три</strong></div>
+                        <div class="text-block">Три цветка</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-4"></div>
+                        <img class="example-image" src="..\images\listing\listen\pazz.png" alt="Цифра 4">
+                        <div class="text-block"><strong>4 - четыре</strong></div>
+                        <div class="text-block">Четыре пазла</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="seasons-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Времена года</h2>
+            <p>Что такое времена года?</p>
+            <div class="opredelenie">
+                <div class="back-rectangle">
+                    <p><strong>Времена года</strong> — это четыре периода, на которые делится год. Каждое время года имеет свои особенности!</p>
+                </div>
+            </div>
+            <p>Основные времена года:</p>
+    
+            <div class="examples-section">
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-1"></div>
+                        <img class="example-image" src="..\images\listing\listen\snow.png" alt="Зима">
+                        <div class="text-block"><strong>Зима</strong></div>
+                        <div class="text-block">Снег, мороз, Новый год!</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-2"></div>
+                        <img class="example-image" src="..\images\listing\listen\flow.png" alt="Весна">
+                        <div class="text-block"><strong>Весна</strong></div>
+                        <div class="text-block">Цветы, капель, теплые деньки!</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-3"></div>
+                        <img class="example-image" src="..\images\listing\listen\sun.png" alt="Лето">
+                        <div class="text-block"><strong>Лето</strong></div>
+                        <div class="text-block">Солнце, море, каникулы!</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-4"></div>
+                        <img class="example-image" src="..\images\listing\listen\list.png" alt="Осень">
+                        <div class="text-block"><strong>Осень</strong></div>
+                        <div class="text-block">Листопад, дожди, урожай!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="animals-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Животные</h2>
+            <p>Кто такие животные?</p>
+            <div class="opredelenie">
+                <div class="back-rectangle">
+                    <p><strong>Животные</strong> — это живые существа, которые могут двигаться, есть и расти. Они бывают домашние и дикие!</p>
+                </div>
+            </div>
+            <p>Примеры животных:</p>
+    
+            <div class="examples-section">
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-1"></div>
+                        <img class="example-image" src="..\images\listing\listen\cat.png" alt="Кошка">
+                        <div class="text-block"><strong>Кошка</strong></div>
+                        <div class="text-block">Домашний питомец, любит молоко</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-2"></div>
+                        <img class="example-image" src="..\images\listing\listen\dog.png" alt="Собака">
+                        <div class="text-block"><strong>Собака</strong></div>
+                        <div class="text-block">Лучший друг человека</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-3"></div>
+                        <img class="example-image" src="..\images\listing\listen\cow.png" alt="Корова">
+                        <div class="text-block"><strong>Корова</strong></div>
+                        <div class="text-block">Дает молоко и гуляет по лугу</div>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="blurred-circle-container">
+                        <div class="blurred-circle color-4"></div>
+                        <img class="example-image" src="..\images\listing\listen\bird.png" alt="Птица">
+                        <div class="text-block"><strong>Птица</strong></div>
+                        <div class="text-block">Может летать в небе</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="notes.js"></script>
+</body>
+</html>

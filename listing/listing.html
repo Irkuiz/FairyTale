@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairyTale</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Unbounded -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+     <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo">FairyTale</div>
+            <div class="login"><a href="../login/registrashion.html">Войти</a></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Уроки по мотивам<br>русских сказок</h1>
+        </section>
+
+        <section class="features">
+            <div class="feature-box peach">Сказочные истории</div>
+            <div class="feature-box yellow">Занимательные задания</div>
+            <div class="feature-box purple">Интересные факты</div>
+        </section>
+
+        <section class="lessons">
+            <div class="back-bloor"></div>
+            <h2>Путешествуйте с любимыми<br>персонажами</h2>
+            <div class="lesson-button">
+                <img src="..\images\listing\listen\frog.png" alt=""> Царевна-лягушка
+            </div>
+            <div class="lesson-button">
+                <img src="..\images\listing\listen\Ivan.png" alt=""> Иванушка-дурачок
+            </div>
+            <div class="lesson-button">
+                <img src="..\images\listing\listen\Gusi.png" alt=""> Гуси-лебеди
+            </div>
+            <div class="lesson-button">
+                <img src="..\images\listing\listen\Moroz.png" alt=""> Морозко
+            </div>
+        </section>
+
+        <section class="courses">
+            <h2>Изучайте обучающие курсы</h2>
+            <div class="course-container">
+                <div class="course-card violet">
+                    <img src="..\images\listing\listen\Vasilisa.png" alt="">
+                    <div class="course-card-info-violet">
+                        <h3>Фигуры с Василисой</h3>
+                        <h4>10 уроков</h4> 
+                    </div>
+                </div>
+                <div class="course-card blue">
+                    <img src="..\images\listing\listen\Ivan2.png" alt="">
+                    <div class="course-card-info-blue">
+                        <h3>Цифры с Иванушкой <br></h3>
+                        <h4>10 уроков</h4>
+                    </div>
+                </div>
+                <div class="course-card green">
+                    <img src="..\images\listing\listen\Medved.png" alt="">
+                    <div class="course-card-info-green">
+                        <h5>Изучаем природу с медведем <br></h5>
+                        <h4>7 уроков</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="registration">
+            <h2>Учитесь с нами</h2>
+            <img class="img-regist" src="..\images\listing\listen\book.png" alt="">
+            <h3>Регистрация для родителя</h3>
+            <form class="registration-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Имя родителя" required autocomplete="name">
+                </div>
+                <div class="form-row">
+                    <input type="email" placeholder="Email" required autocomplete="email">
+                </div>
+                <div class="form-row">
+                    <input type="password" placeholder="Пароль" minlength="6" required autocomplete="new-password">
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="Номер телефона" required autocomplete="tel">
+                </div>
+                <div class="form-row">
+                    <button type="submit" id="submit-btn">Зарегистрироваться</button>
+                </div>
+            </form>
+        </section>
+        <footer>
+            &copy; 2025 FairyTale. Все права защищены.
+        </footer>
+    </main>
+
+    <script src="listing.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Родительский кабинет</title>
+    <link rel="stylesheet" href="cabinet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../notes/notes.html" class="back-button">← Назад</a>
+        <h1>Родительский кабинет</h1>
+        <button id="logout-button" class="logout-button">Выйти</button>
+    </header>
+
+    <main>
+        <div class="profile-section">
+            <section class="profile-card">
+                <h2>Мой профиль</h2>
+                <div class="info-container">
+                    <input type="text" placeholder="Имя родителя" class="text-input" id="parent-name">
+                    <input type="text" placeholder="Логин" class="text-input" id="parent-login" disabled>
+                    <input type="tel" placeholder="Номер телефона" class="text-input" id="parent-phone">
+                </div>
+            </section>
+
+            <button class="save-button">Сохранить данные</button>
+            
+            <div class="children-section">
+                <h2>Мои дети</h2>
+                <div class="children-list" id="children-list">
+                    <!-- Дети будут добавляться здесь динамически -->
+                </div>
+                <button class="add-child-button">+ Добавить ребенка</button>
+                <div class="current-child">
+                    <h3>Текущий ребенок: <span id="current-child-name">Не выбран</span></h3>
+                </div>
+            </div>
+        </div>
+
+        <section class="stats-section">
+            <div class="stats-card total-lessons">
+                <h3>Всего пройдено</h3>
+                <div class="stat-number" id="total-lessons">0</div>
+                <p class="stat-label">уроков</p>
+            </div>
+            
+            <div class="stats-card active-child">
+                <h3>Активный ребенок</h3>
+                <div class="stat-number" id="active-child-lessons">0</div>
+                <p class="stat-label">уроков</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для добавления ребенка -->
+    <div class="modal" id="add-child-modal">
+        <div class="modal-content">
+            <h2>Добавить ребенка</h2>
+            <input type="text" placeholder="Имя ребенка" id="child-name-input">
+            <input type="number" placeholder="Возраст" id="child-age-input" min="3" max="12">
+            <div class="modal-buttons">
+                <button id="cancel-add-child">Отмена</button>
+                <button id="confirm-add-child">Добавить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+
+    <script>
+        // Конфигурация Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD97XC87A5ceWQqD1h9hHhVFCH9xW0fhBk",
+            authDomain: "rina-afb33.firebaseapp.com",
+            databaseURL: "https://rina-afb33-default-rtdb.firebaseio.com",
+            projectId: "rina-afb33",
+            storageBucket: "rina-afb33.firebasestorage.app",
+            messagingSenderId: "80189541038",
+            appId: "1:80189541038:web:fea16be10ce25b9073bb3f",
+            measurementId: "G-R25C670FPV"
+        };
+
+        // Инициализация Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const auth = firebase.auth();
+    </script>
+
+    <script src="cabinet.js"></script>
+</body>
+</html>

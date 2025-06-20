@@ -1,0 +1,612 @@
+/* Основные стили */
+body {
+  font-family: 'Unbounded', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+:root {
+  /* Адаптивные переменные */
+  --header-font-size: clamp(16px, 4vw, 23px);
+  --logo-font-size: clamp(22px, 5vw, 35px);
+  --login-font-size: clamp(18px, 5vw, 30px);
+  --hero-title-font-size: clamp(24px, 6vw, 50px);
+  --hero-text-font-size: clamp(16px, 4vw, 30px);
+  --note-card-size: clamp(180px, 85vw, 300px);
+  --gap-size: clamp(15px, 4vw, 150px);
+  --modal-padding: clamp(10px, 3vw, 20px);
+  --mobile-breakpoint: 600px;
+}
+
+/* Контейнер */
+.container {
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Шапка */
+header {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.header-wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: var(--header-font-size);
+  color: #1985A1;
+  flex-wrap: wrap;
+}
+
+header a {
+  text-decoration: none;
+  color: #1985A1;
+  margin: 0 8px;
+  transition: all 0.2s ease;
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
+}
+
+header nav a {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  white-space: nowrap;
+}
+
+header nav a:hover {
+  transform: scale(1.05);
+}
+
+header .logo {
+  font-size: var(--logo-font-size);
+  color: #1985A1;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+header .login a {
+  font-size: var(--login-font-size);
+  padding: 5px 10px;
+  color: #1985A1;
+}
+
+.current-page {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* Основной контент */
+main {
+  flex: 1;
+}
+
+/* Герой-секция */
+.hero {
+  text-align: center;
+  padding: 30px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: var(--hero-title-font-size);
+  color: #1985A1;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: var(--hero-text-font-size);
+  color: #1985A1;
+  margin: 10px 0 0;
+}
+
+/* Фоновое размытие */
+.back-bloor {
+  position: absolute;
+  z-index: 0;
+  width: min(1100px, 90vw);
+  height: min(800px, 70vh);
+  background-color: #CAFFBF;
+  border-radius: 50%;
+  filter: blur(min(120px, 20vw));
+  opacity: 0.5;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+}
+
+/* Сетка заметок */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--note-card-size), 1fr));
+  gap: var(--gap-size);
+  padding: 20px 10px;
+  position: relative;
+  z-index: 2;
+  max-width: calc(var(--note-card-size) * 3 + var(--gap-size) * 2);
+  margin: 0 auto;
+}
+
+/* Карточки заметок */
+.note-card {
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--note-card-size);
+  position: relative;
+  overflow: hidden;
+}
+
+.note-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.note-card:hover::before {
+  opacity: 1;
+}
+
+.note-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 4s infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.note-card:hover::after {
+  opacity: 0.5;
+}
+
+.note-card:nth-child(1) {
+  background: linear-gradient(135deg, #CAFFBF, #82FF68);
+}
+
+.note-card:nth-child(2) {
+  background: linear-gradient(135deg, #9BF6FF, #01E8FF);
+}
+
+.note-card:nth-child(3) {
+  background: linear-gradient(135deg, #A0C4FF, #478DFF);
+}
+
+.note-card:nth-child(4) {
+  background: linear-gradient(135deg, #DDA0DD, #DA70D6);
+}
+
+.note-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.note-card img {
+  max-width: 70%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.note-card:hover img {
+  transform: scale(1.05);
+}
+
+.note-card h3 {
+  font-size: clamp(18px, 4vw, 28px);
+  color: #2C699A;
+  margin: 8px 0 0;
+  z-index: 2;
+  font-weight: 500;
+}
+
+/* Плейсхолдеры */
+.placeholder-card {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.placeholder-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(30deg); opacity: 0.5; }
+  100% { transform: translateX(100%) rotate(30deg); opacity: 0.8; }
+}
+
+.placeholder-card.blue {
+  background-color: #d0e8f2;
+}
+
+.placeholder-card.cyan {
+  background-color: #b3e5fc;
+}
+
+/* Подвал */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: black;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+  font-size: clamp(14px, 3vw, 16px);
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+  padding: 20px 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 20px auto;
+  padding: var(--modal-padding);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.modal-content h2 {
+  font-size: clamp(22px, 5vw, 36px);
+  color: #2C699A;
+  margin: 0 0 15px;
+  font-weight: 600;
+}
+
+.modal-content p {
+  font-size: clamp(16px, 4vw, 24px);
+  color: #2C699A;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 28px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.close:hover {
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+/* Определение в прямоугольнике */
+.back-rectangle {
+  background-color: #e8f5e9;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 4px solid #81c784;
+}
+
+.back-rectangle p {
+  font-size: clamp(15px, 3.5vw, 20px);
+  color: #2C699A;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Секция с примерами */
+.examples-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.example-container {
+  flex: 1 1 200px;
+  max-width: 220px;
+  min-width: 160px;
+  padding: 10px;
+}
+
+.blurred-circle-container {
+  position: relative;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blurred-circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(25px);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.color-1 { background-color: #FFF9C4; }
+.color-2 { background-color: #B3E5FC; }
+.color-3 { background-color: #FFE0B2; }
+.color-4 { background-color: #FFCCBC; }
+
+.example-image {
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.example-image:hover {
+  transform: scale(1.1);
+}
+
+.text-block {
+  z-index: 2;
+  position: relative;
+  font-size: clamp(14px, 3vw, 16px);
+  margin: 5px 0;
+  color: #2C699A;
+}
+
+.text-block:first-of-type {
+  font-weight: 500;
+  color: #1a5276;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Мобильная версия */
+@media (max-width: 600px) {
+   .header-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "logo login"
+            "nav nav";
+        padding: 10px;
+        gap: 10px;
+        align-items: center;
+    }
+
+     /* Логотип FairyTale - левый верхний угол */
+    header .logo {
+        font-size: 22px;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        grid-area: logo;
+        justify-self: start;
+    }
+
+    /* Имя пользователя - правый верхний угол */
+    header .login {
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        grid-area: login;
+        justify-self: end;
+    }
+
+    header .login a {
+        font-size: 18px;
+    }
+
+    /* Навигация (Уроки и Заметки) - вторая строка по центру */
+    header nav {
+        grid-area: nav;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 5px;
+        width: 100%;
+        border-top: 1px solid rgba(25, 133, 161, 0.2);
+        padding-top: 10px;
+    }
+
+    header nav a {
+        margin: 0;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+     /* Текущая страница */
+    .current-page {
+        font-size: 16px;
+        text-decoration: underline;
+    }
+
+    /* Убираем стандартные отступы */
+    header {
+        padding: 0;
+    }
+    
+  .hero {
+    padding: 20px 10px;
+  }
+  
+  /* Уменьшаем остальные элементы для мобильных */
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 100%;
+  }
+  
+  .note-card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+  
+  .examples-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .example-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .blurred-circle-container {
+    height: 140px;
+  }
+  
+  footer {
+    padding: 15px 0;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 400px) {
+     header .logo {
+        font-size: 22px;
+    }
+
+    header .login a {
+        font-size: 18px;
+    }
+
+    header nav a {
+        font-size: 16px;
+    }
+  .hero h1 {
+    font-size: 20px;
+  }
+  
+  .hero p {
+    font-size: 14px;
+  }
+  
+  .note-card {
+    max-width: 240px;
+    padding: 12px;
+  }
+  
+  .modal-content {
+    padding: 12px;
+  }
+  
+  .back-rectangle {
+    padding: 12px;
+  }
+}

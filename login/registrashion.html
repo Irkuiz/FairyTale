@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход / Регистрация</title>
+    <link rel="stylesheet" href="registrashion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <section id="login" class="form-section">
+            <h2 class="login-title">Вход в систему</h2>
+            <form class="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+            <p class="toggle-link">
+                <a href="#" id="goToRegister">Зарегистрироваться</a>
+            </p>
+            <p class="toggle-link">
+                <a href="#" id="forgot-password">Забыли пароль?</a>
+            </p>
+        </section>
+
+        <section id="register" class="form-section" style="display: none;">
+            <h2 class="register-title">Регистрация</h2>
+            <form class="registration-form">
+                <input type="text" id="register-name" placeholder="Ваше имя" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Пароль" required>
+                <input type="tel" id="register-phone" placeholder="Номер телефона" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <p class="toggle-link">
+                <a href="#" id="goToLogin">Уже есть аккаунт? Войти</a>
+            </p>
+        </section>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    
+    <script>
+        // Конфигурация Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD97XC87A5ceWQqD1h9hHhVFCH9xW0fhBk",
+            authDomain: "rina-afb33.firebaseapp.com",
+            databaseURL: "https://rina-afb33-default-rtdb.firebaseio.com",
+            projectId: "rina-afb33",
+            storageBucket: "rina-afb33.firebasestorage.app",
+            messagingSenderId: "80189541038",
+            appId: "1:80189541038:web:fea16be10ce25b9073bb3f",
+            measurementId: "G-R25C670FPV"
+        };
+        
+        // Инициализация Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const database = firebase.database();
+    </script>
+    
+    <script src="registrashion.js"></script>
+</body>
+</html>
